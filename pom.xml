@@ -61,12 +61,16 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.7.9</version>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>2.7.9</version>
+            <configuration>
+                <mainClass>com.madridpay.MadridPayBackendApplication</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 </project>
