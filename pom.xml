@@ -6,7 +6,7 @@
     <groupId>com.madridpay</groupId>
     <artifactId>madridpay-backend</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging> <!-- Set WAR packaging -->
 
     <name>MadridPay Backend</name>
     <description>Backend API for MadridPay</description>
@@ -15,7 +15,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.9</version>
-        <relativePath/> <!-- Look for parent from the repository -->
+        <relativePath/>
     </parent>
 
     <properties>
@@ -27,14 +27,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.7.9</version>
         </dependency>
 
-        <!-- Spring Boot JPA Starter -->
+        <!-- Spring Boot Starter for JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.7.9</version>
         </dependency>
 
         <!-- MySQL Connector -->
@@ -44,33 +42,31 @@
             <version>8.0.33</version>
         </dependency>
 
-        <!-- Tomcat Embed EL -->
+        <!-- Tomcat Embed Servlet API (provided) -->
         <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-el</artifactId>
-            <version>9.0.75</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Spring Boot Starter Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.7.9</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>2.7.9</version>
-            <configuration>
-                <mainClass>com.madridpay.MadridPayBackendApplication</mainClass>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.9</version>
+                <configuration>
+                    <mainClass>com.madridpay.MadridPayBackendApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
